@@ -1,486 +1,486 @@
-  <!DOCTYPE html>
-  <html lang="fr">
-  <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio — Miniatures YouTube</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --ink:#211f3b;
-      --muted:#5c5a7a;
-      --blue:#3b6bff;
-      --cyan:#33c9e0;
-      --violet:#8b5cf6;
-      --card:rgba(255,255,255,0.72);
-      --card-border:rgba(255,255,255,0.9);
-      --radius:18px;
-    }
-    *{margin:0;padding:0;box-sizing:border-box;}
-    html{scroll-behavior:smooth;}
-    body{
-      font-family:'Poppins',sans-serif;
-      color:var(--ink);
-      background:
-        radial-gradient(circle at 12% 8%, rgba(139,92,246,0.5), transparent 42%),
-        radial-gradient(circle at 88% 18%, rgba(51,201,224,0.5), transparent 48%),
-        radial-gradient(circle at 50% 85%, rgba(59,107,255,0.4), transparent 55%),
-        linear-gradient(160deg, #e6ecff 0%, #e0f6ff 40%, #efe4ff 75%, #e0fbff 100%);
-      background-attachment:fixed;
-      line-height:1.55;
-    }
-    a{color:inherit;text-decoration:none;}
-    .wrap{max-width:1360px;margin:0 auto;padding:0 24px;}
-    a:focus-visible, button:focus-visible{outline:2px solid var(--violet);outline-offset:3px;}
-    @media (prefers-reduced-motion: reduce){
-      *{animation-duration:0.001ms !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
-    }
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Miniatures YouTube</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#211f3b;
+    --muted:#5c5a7a;
+    --blue:#3b6bff;
+    --cyan:#33c9e0;
+    --violet:#8b5cf6;
+    --card:rgba(255,255,255,0.72);
+    --card-border:rgba(255,255,255,0.9);
+    --radius:18px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Poppins',sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at 12% 8%, rgba(139,92,246,0.5), transparent 42%),
+      radial-gradient(circle at 88% 18%, rgba(51,201,224,0.5), transparent 48%),
+      radial-gradient(circle at 50% 85%, rgba(59,107,255,0.4), transparent 55%),
+      linear-gradient(160deg, #e6ecff 0%, #e0f6ff 40%, #efe4ff 75%, #e0fbff 100%);
+    background-attachment:fixed;
+    line-height:1.55;
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1360px;margin:0 auto;padding:0 24px;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--violet);outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
 
-    /* ---------- FOND ANIME (logos Photoshop) ---------- */
-    .falling-logos{
-      position:fixed;inset:0;z-index:-1;
-      overflow:hidden;pointer-events:none;
-    }
-    .ps-icon{
-      position:absolute;
-      top:-80px;
-      width:46px;height:46px;
-      border-radius:11px;
-      background:linear-gradient(135deg,#001E36,#31A8FF);
-      display:flex;align-items:center;justify-content:center;
-      color:#fff;font-weight:800;font-size:17px;font-family:'Poppins',sans-serif;
-      filter:blur(1.6px);
-      opacity:0.28;
-      box-shadow:0 10px 20px -8px rgba(0,30,54,0.4);
-      animation:fall linear infinite;
-    }
-    @keyframes fall{
-      0%{transform:translateY(0) rotate(0deg);}
-      100%{transform:translateY(112vh) rotate(20deg);}
-    }
-    @media (prefers-reduced-motion: reduce){
-      .falling-logos{display:none;}
-    }
+  /* ---------- FOND ANIME (logos Photoshop) ---------- */
+  .falling-logos{
+    position:fixed;inset:0;z-index:-1;
+    overflow:hidden;pointer-events:none;
+  }
+  .ps-icon{
+    position:absolute;
+    top:-80px;
+    width:46px;height:46px;
+    border-radius:11px;
+    background:linear-gradient(135deg,#001E36,#31A8FF);
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-weight:800;font-size:17px;font-family:'Poppins',sans-serif;
+    filter:blur(1.6px);
+    opacity:0.28;
+    box-shadow:0 10px 20px -8px rgba(0,30,54,0.4);
+    animation:fall linear infinite;
+  }
+  @keyframes fall{
+    0%{transform:translateY(0) rotate(0deg);}
+    100%{transform:translateY(112vh) rotate(20deg);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .falling-logos{display:none;}
+  }
 
-    /* ---------- HEADER ---------- */
-    header{padding:22px 0;position:relative;z-index:10;}
-    nav{display:flex;align-items:center;justify-content:space-between;}
-    .logo{font-weight:800;font-size:26px;color:var(--ink);}
-    .btn-contact{
-      background:linear-gradient(120deg, var(--blue), var(--violet));
-      color:#fff;font-weight:700;font-size:14.5px;
-      padding:12px 26px;border-radius:100px;
-      box-shadow:0 10px 25px -8px rgba(91,73,255,0.55);
-      transition:transform .15s, box-shadow .15s;
-    }
-    .btn-contact:hover{transform:translateY(-2px);box-shadow:0 14px 30px -8px rgba(91,73,255,0.6);}
+  /* ---------- HEADER ---------- */
+  header{padding:22px 0;position:relative;z-index:10;}
+  nav{display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-weight:800;font-size:26px;color:var(--ink);}
+  .btn-contact{
+    background:linear-gradient(120deg, var(--blue), var(--violet));
+    color:#fff;font-weight:700;font-size:14.5px;
+    padding:12px 26px;border-radius:100px;
+    box-shadow:0 10px 25px -8px rgba(91,73,255,0.55);
+    transition:transform .15s, box-shadow .15s;
+  }
+  .btn-contact:hover{transform:translateY(-2px);box-shadow:0 14px 30px -8px rgba(91,73,255,0.6);}
 
-    /* ---------- HERO ---------- */
-    .hero{padding:70px 0 90px;text-align:center;position:relative;}
-    .hero h1{
-      font-size:clamp(32px,5vw,54px);
-      font-weight:800;
-      line-height:1.12;
-      max-width:760px;
-      margin:0 auto 18px;
-    }
-    .hero h1 .grad, .hero p .grad{
-      background:linear-gradient(120deg, var(--blue), var(--violet) 55%, var(--cyan));
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
-    }
-    .hero p{
-      color:var(--muted);font-size:17px;max-width:520px;margin:0 auto;font-weight:500;
-    }
-    .hero-contact{
-      display:inline-block;margin-top:32px;
-      padding:18px 42px;font-size:17px;
-    }
+  /* ---------- HERO ---------- */
+  .hero{padding:70px 0 90px;text-align:center;position:relative;}
+  .hero h1{
+    font-size:clamp(32px,5vw,54px);
+    font-weight:800;
+    line-height:1.12;
+    max-width:760px;
+    margin:0 auto 18px;
+  }
+  .hero h1 .grad, .hero p .grad{
+    background:linear-gradient(120deg, var(--blue), var(--violet) 55%, var(--cyan));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .hero p{
+    color:var(--muted);font-size:17px;max-width:520px;margin:0 auto;font-weight:500;
+  }
+  .hero-contact{
+    display:inline-block;margin-top:32px;
+    padding:18px 42px;font-size:17px;
+  }
 
-    /* ---------- SECTION HEAD ---------- */
-    .section{padding:0 0 90px;}
-    .section-head{text-align:center;margin-bottom:44px;}
-    .section-head .eyebrow{
-      display:block;font-size:12.5px;font-weight:700;letter-spacing:1.5px;
-      color:var(--violet);text-transform:uppercase;margin-bottom:10px;
-    }
-    .section-head h2{font-size:clamp(24px,3.2vw,34px);font-weight:800;margin-bottom:8px;}
-    .section-head p{color:var(--muted);font-size:15px;font-weight:500;}
+  /* ---------- SECTION HEAD ---------- */
+  .section{padding:0 0 90px;}
+  .section-head{text-align:center;margin-bottom:44px;}
+  .section-head .eyebrow{
+    display:block;font-size:12.5px;font-weight:700;letter-spacing:1.5px;
+    color:var(--violet);text-transform:uppercase;margin-bottom:10px;
+  }
+  .section-head h2{font-size:clamp(24px,3.2vw,34px);font-weight:800;margin-bottom:8px;}
+  .section-head p{color:var(--muted);font-size:15px;font-weight:500;}
 
-    /* ---------- CREATOR BLOCK ---------- */
-    .creator-block{margin-bottom:56px;}
-    .thumb-row{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(340px, 1fr));
-      gap:24px;
-      margin-bottom:18px;
-      justify-content:center;
-    }
-    .thumb-item{
-      aspect-ratio:16/9;
-      border-radius:14px;
-      box-shadow:0 12px 30px -14px rgba(60,50,120,0.25);
-      display:flex;align-items:center;justify-content:center;
-      color:var(--muted);font-size:12.5px;font-weight:600;
-      text-align:center;
-      transition:transform .18s ease, box-shadow .18s ease;
-      overflow:hidden;
-    }
-    .thumb-item img{width:100%;height:100%;object-fit:cover;display:block;border-radius:14px;}
-    .thumb-item:hover{transform:translateY(-4px);box-shadow:0 18px 34px -14px rgba(60,50,120,0.35);}
-    @media (max-width:820px){.thumb-row{grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));}}
-    @media (max-width:560px){.thumb-row{grid-template-columns:1fr;gap:14px;}}
+  /* ---------- CREATOR BLOCK ---------- */
+  .creator-block{margin-bottom:56px;}
+  .thumb-row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(340px, 1fr));
+    gap:24px;
+    margin-bottom:18px;
+    justify-content:center;
+  }
+  .thumb-item{
+    aspect-ratio:16/9;
+    border-radius:14px;
+    box-shadow:0 12px 30px -14px rgba(60,50,120,0.25);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--muted);font-size:12.5px;font-weight:600;
+    text-align:center;
+    transition:transform .18s ease, box-shadow .18s ease;
+    overflow:hidden;
+  }
+  .thumb-item img{width:100%;height:100%;object-fit:cover;display:block;border-radius:14px;}
+  .thumb-item:hover{transform:translateY(-4px);box-shadow:0 18px 34px -14px rgba(60,50,120,0.35);}
+  @media (max-width:820px){.thumb-row{grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));}}
+  @media (max-width:560px){.thumb-row{grid-template-columns:1fr;gap:14px;}}
 
-    .creator-tag{
-      display:flex;align-items:center;justify-content:center;gap:10px;
-    }
-    .creator-logo{
-      width:52px;height:52px;border-radius:50%;
-      background:linear-gradient(135deg, var(--blue), var(--violet) 55%, var(--cyan));
-      display:flex;align-items:center;justify-content:center;
-      color:#fff;font-weight:800;font-size:14px;
-      box-shadow:0 12px 22px -6px rgba(91,73,255,0.65);
-      flex-shrink:0;
-      overflow:hidden;
-    }
-    .creator-logo img{width:100%;height:100%;object-fit:cover;transform:scale(1.45);display:block;}
-    .creator-name{font-weight:700;font-size:15px;}
-    .creator-sub{font-size:12.5px;color:var(--muted);font-weight:500;}
+  .creator-tag{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+  }
+  .creator-logo{
+    width:52px;height:52px;border-radius:50%;
+    background:linear-gradient(135deg, var(--blue), var(--violet) 55%, var(--cyan));
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-weight:800;font-size:14px;
+    box-shadow:0 12px 22px -6px rgba(91,73,255,0.65);
+    flex-shrink:0;
+    overflow:hidden;
+  }
+  .creator-logo img{width:100%;height:100%;object-fit:cover;transform:scale(1.45);display:block;}
+  .creator-name{font-weight:700;font-size:15px;}
+  .creator-sub{font-size:12.5px;color:var(--muted);font-weight:500;}
 
-    /* ---------- BANNIERES ---------- */
-    .banner-item{
-      border-radius:14px;
-      background:var(--card);
-      border:1px solid var(--card-border);
-      backdrop-filter:blur(6px);
-      box-shadow:0 16px 34px -12px rgba(60,50,120,0.4);
-      display:flex;align-items:center;justify-content:center;
-      color:var(--muted);font-size:13px;font-weight:600;
-      margin-bottom:22px;
-      overflow:hidden;
-    }
-    .banner-item img{
-      width:100%;
-      height:auto;
-      display:block;
-      border-radius:14px;
-    }
+  /* ---------- BANNIERES ---------- */
+  .banner-item{
+    border-radius:14px;
+    background:var(--card);
+    border:1px solid var(--card-border);
+    backdrop-filter:blur(6px);
+    box-shadow:0 16px 34px -12px rgba(60,50,120,0.4);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--muted);font-size:13px;font-weight:600;
+    margin-bottom:22px;
+    overflow:hidden;
+  }
+  .banner-item img{
+    width:100%;
+    height:auto;
+    display:block;
+    border-radius:14px;
+  }
 
-    .add-note{
-      font-size:12.5px;color:var(--muted);font-weight:500;
-      border:1.5px dashed rgba(91,73,255,0.35);
-      border-radius:12px;padding:12px 16px;
-      background:rgba(255,255,255,0.4);
-    }
+  .add-note{
+    font-size:12.5px;color:var(--muted);font-weight:500;
+    border:1.5px dashed rgba(91,73,255,0.35);
+    border-radius:12px;padding:12px 16px;
+    background:rgba(255,255,255,0.4);
+  }
 
-    /* ---------- AVIS VIDEO ---------- */
-    .video-grid{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
-    }
-    .video-card{
-      background:var(--card);
-      border:1px solid var(--card-border);
-      border-radius:16px;
-      padding:14px;
-      backdrop-filter:blur(6px);
-      box-shadow:0 12px 30px -14px rgba(60,50,120,0.25);
-    }
-    .video-slot{
-      aspect-ratio:9/16;
-      max-height:340px;
-      border-radius:12px;
-      background:linear-gradient(160deg, rgba(59,107,255,0.15), rgba(139,92,246,0.15));
-      display:flex;align-items:center;justify-content:center;
-      margin-bottom:12px;
-      position:relative;
-    }
-    .play-circle{
-      width:52px;height:52px;border-radius:50%;
-      background:linear-gradient(120deg, var(--blue), var(--violet));
-      display:flex;align-items:center;justify-content:center;
-    }
-    .play-circle::after{
-      content:"";
-      border-top:8px solid transparent;border-bottom:8px solid transparent;
-      border-left:13px solid #fff;margin-left:3px;
-    }
-    .video-card .vname{font-weight:700;font-size:13.5px;}
-    .video-card .vrole{font-size:12px;color:var(--muted);font-weight:500;}
-    @media (max-width:820px){.video-grid{grid-template-columns:repeat(2,1fr);}}
-    @media (max-width:560px){.video-grid{grid-template-columns:1fr;}}
+  /* ---------- AVIS VIDEO ---------- */
+  .video-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+  }
+  .video-card{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:16px;
+    padding:14px;
+    backdrop-filter:blur(6px);
+    box-shadow:0 12px 30px -14px rgba(60,50,120,0.25);
+  }
+  .video-slot{
+    aspect-ratio:9/16;
+    max-height:340px;
+    border-radius:12px;
+    background:linear-gradient(160deg, rgba(59,107,255,0.15), rgba(139,92,246,0.15));
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:12px;
+    position:relative;
+  }
+  .play-circle{
+    width:52px;height:52px;border-radius:50%;
+    background:linear-gradient(120deg, var(--blue), var(--violet));
+    display:flex;align-items:center;justify-content:center;
+  }
+  .play-circle::after{
+    content:"";
+    border-top:8px solid transparent;border-bottom:8px solid transparent;
+    border-left:13px solid #fff;margin-left:3px;
+  }
+  .video-card .vname{font-weight:700;font-size:13.5px;}
+  .video-card .vrole{font-size:12px;color:var(--muted);font-weight:500;}
+  @media (max-width:820px){.video-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.video-grid{grid-template-columns:1fr;}}
 
-    /* ---------- RESEAUX ---------- */
-    .reseaux{padding:0 0 100px;}
-    .reseaux-box{
-      background:var(--card);
-      border:1px solid var(--card-border);
-      border-radius:24px;
-      padding:56px 32px;
-      text-align:center;
-      backdrop-filter:blur(6px);
-      box-shadow:0 20px 50px -20px rgba(60,50,120,0.3);
-    }
-    .reseaux-box h2{font-size:clamp(24px,3.5vw,34px);font-weight:800;margin-bottom:10px;}
-    .reseaux-box p{color:var(--muted);font-weight:500;margin-bottom:32px;}
-    .reseaux-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
-    .reseaux-link{
-      display:flex;flex-direction:column;align-items:center;gap:10px;
-      width:92px;
-    }
-    .reseaux-icon{
-      width:58px;height:58px;border-radius:18px;
-      background:linear-gradient(135deg, var(--blue), var(--violet));
-      display:flex;align-items:center;justify-content:center;
-      color:#fff;font-weight:800;font-size:13px;
-      box-shadow:0 10px 24px -10px rgba(91,73,255,0.5);
-      transition:transform .15s, box-shadow .15s;
-    }
-    .reseaux-link:hover .reseaux-icon{transform:translateY(-4px) scale(1.05);}
-    .reseaux-link span:last-child{font-size:12.5px;font-weight:600;color:var(--muted);}
+  /* ---------- RESEAUX ---------- */
+  .reseaux{padding:0 0 100px;}
+  .reseaux-box{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:24px;
+    padding:56px 32px;
+    text-align:center;
+    backdrop-filter:blur(6px);
+    box-shadow:0 20px 50px -20px rgba(60,50,120,0.3);
+  }
+  .reseaux-box h2{font-size:clamp(24px,3.5vw,34px);font-weight:800;margin-bottom:10px;}
+  .reseaux-box p{color:var(--muted);font-weight:500;margin-bottom:32px;}
+  .reseaux-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+  .reseaux-link{
+    display:flex;flex-direction:column;align-items:center;gap:10px;
+    width:92px;
+  }
+  .reseaux-icon{
+    width:58px;height:58px;border-radius:18px;
+    background:linear-gradient(135deg, var(--blue), var(--violet));
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-weight:800;font-size:13px;
+    box-shadow:0 10px 24px -10px rgba(91,73,255,0.5);
+    transition:transform .15s, box-shadow .15s;
+  }
+  .reseaux-link:hover .reseaux-icon{transform:translateY(-4px) scale(1.05);}
+  .reseaux-link span:last-child{font-size:12.5px;font-weight:600;color:var(--muted);}
 
-    /* ---------- FAQ ---------- */
-    .faq{padding:0 0 100px;}
-    .faq-box{
-      background:var(--card);
-      border:1px solid var(--card-border);
-      border-radius:24px;
-      padding:56px 40px;
-      backdrop-filter:blur(6px);
-      box-shadow:0 20px 50px -20px rgba(60,50,120,0.3);
-    }
-    .faq-list{max-width:720px;margin:0 auto;}
-    .faq-item{border-bottom:1px solid rgba(91,73,255,0.15);}
-    .faq-item:last-child{border-bottom:none;}
-    .faq-item summary{
-      list-style:none;cursor:pointer;
-      display:flex;align-items:center;justify-content:space-between;gap:16px;
-      padding:20px 4px;font-weight:700;font-size:16px;color:var(--ink);
-    }
-    .faq-item summary::-webkit-details-marker{display:none;}
-    .faq-item summary::after{
-      content:"+";
-      font-size:22px;font-weight:600;color:var(--violet);
-      flex-shrink:0;transition:transform .2s ease;
-    }
-    .faq-item[open] summary::after{transform:rotate(45deg);}
-    .faq-answer{
-      padding:0 4px 22px;color:var(--muted);font-size:14.5px;font-weight:500;line-height:1.6;
-    }
+  /* ---------- FAQ ---------- */
+  .faq{padding:0 0 100px;}
+  .faq-box{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:24px;
+    padding:56px 40px;
+    backdrop-filter:blur(6px);
+    box-shadow:0 20px 50px -20px rgba(60,50,120,0.3);
+  }
+  .faq-list{max-width:720px;margin:0 auto;}
+  .faq-item{border-bottom:1px solid rgba(91,73,255,0.15);}
+  .faq-item:last-child{border-bottom:none;}
+  .faq-item summary{
+    list-style:none;cursor:pointer;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:20px 4px;font-weight:700;font-size:16px;color:var(--ink);
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{
+    content:"+";
+    font-size:22px;font-weight:600;color:var(--violet);
+    flex-shrink:0;transition:transform .2s ease;
+  }
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-answer{
+    padding:0 4px 22px;color:var(--muted);font-size:14.5px;font-weight:500;line-height:1.6;
+  }
 
-    footer{padding:26px 0;}
-    .footer-row{
-      display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
-      font-size:12.5px;color:var(--muted);font-weight:500;
-    }
-  </style>
-  </head>
-  <body>
+  footer{padding:26px 0;}
+  .footer-row{
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+    font-size:12.5px;color:var(--muted);font-weight:500;
+  }
+</style>
+</head>
+<body>
 
-  <div class="falling-logos" aria-hidden="true">
-    <span class="ps-icon" style="left:6%;width:40px;height:40px;font-size:15px;animation-duration:22s;animation-delay:-2s;">Ps</span>
-    <span class="ps-icon" style="left:20%;width:52px;height:52px;font-size:19px;animation-duration:28s;animation-delay:-14s;">Ps</span>
-    <span class="ps-icon" style="left:38%;width:36px;height:36px;font-size:13px;animation-duration:19s;animation-delay:-8s;">Ps</span>
-    <span class="ps-icon" style="left:58%;width:48px;height:48px;font-size:17px;animation-duration:25s;animation-delay:-20s;">Ps</span>
-    <span class="ps-icon" style="left:76%;width:42px;height:42px;font-size:15px;animation-duration:21s;animation-delay:-5s;">Ps</span>
-    <span class="ps-icon" style="left:90%;width:50px;height:50px;font-size:18px;animation-duration:27s;animation-delay:-11s;">Ps</span>
+<div class="falling-logos" aria-hidden="true">
+  <span class="ps-icon" style="left:6%;width:40px;height:40px;font-size:15px;animation-duration:22s;animation-delay:-2s;">Ps</span>
+  <span class="ps-icon" style="left:20%;width:52px;height:52px;font-size:19px;animation-duration:28s;animation-delay:-14s;">Ps</span>
+  <span class="ps-icon" style="left:38%;width:36px;height:36px;font-size:13px;animation-duration:19s;animation-delay:-8s;">Ps</span>
+  <span class="ps-icon" style="left:58%;width:48px;height:48px;font-size:17px;animation-duration:25s;animation-delay:-20s;">Ps</span>
+  <span class="ps-icon" style="left:76%;width:42px;height:42px;font-size:15px;animation-duration:21s;animation-delay:-5s;">Ps</span>
+  <span class="ps-icon" style="left:90%;width:50px;height:50px;font-size:18px;animation-duration:27s;animation-delay:-11s;">Ps</span>
+</div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a href="#top" class="logo">Inezix</a>
+    </nav>
   </div>
+</header>
 
-  <header>
+<main id="top">
+
+  <section class="hero">
     <div class="wrap">
-      <nav>
-        <a href="#top" class="logo">Inezix</a>
-      </nav>
+      <h1>Votre contenu mérite d'être <span class="grad">vu.</span><br>Commencez par la <span class="grad">miniature.</span></h1>
+      <a href="#reseaux" class="btn-contact hero-contact">Me contacter</a>
     </div>
-  </header>
+  </section>
 
-  <main id="top">
-
-    <section class="hero">
-      <div class="wrap">
-        <h1>Votre contenu mérite d'être <span class="grad">vu.</span><br>Commencez par la <span class="grad">miniature.</span></h1>
-        <a href="#reseaux" class="btn-contact hero-contact">Me contacter</a>
+  <!-- MINIATURES -->
+  <section class="section" id="miniatures">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Miniatures YouTube</h2>
       </div>
-    </section>
 
-    <!-- MINIATURES -->
-    <section class="section" id="miniatures">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Miniatures YouTube</h2>
+      <!-- Bloc créateur 1 : copie/colle ce bloc entier pour en ajouter, ou supprime-le pour en retirer -->
+      <div class="creator-block">
+        <div class="thumb-row">
+          <div class="thumb-item"><img src="images/thumb1.png" alt="Miniature En Zone"></div>
+          <div class="thumb-item"><img src="images/thumb2.png" alt="Miniature Dans la Gari 4"></div>
+          <div class="thumb-item"><img src="images/thumb3.png" alt="Miniature Dans la Gari 3 spécial rap"></div>
         </div>
-
-        <!-- Bloc créateur 1 : copie/colle ce bloc entier pour en ajouter, ou supprime-le pour en retirer -->
-        <div class="creator-block">
-          <div class="thumb-row">
-            <div class="thumb-item"><img src="images/thumb1.png" alt="Miniature En Zone"></div>
-            <div class="thumb-item"><img src="images/thumb2.png" alt="Miniature Dans la Gari 4"></div>
-            <div class="thumb-item"><img src="images/thumb3.png" alt="Miniature Dans la Gari 3 spécial rap"></div>
-          </div>
-          <div class="creator-tag">
-            <div class="creator-logo"><img src="images/logo-djino.jpg" alt="DJINO DBG"></div>
-            <div>
-              <div class="creator-name">DJINO DBG</div>
-              <div class="creator-sub"><a href="https://www.youtube.com/@djinodbg" target="_blank" rel="noopener">Chaîne YouTube</a></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bloc créateur 2 -->
-        <div class="creator-block">
-          <div class="thumb-row">
-            <div class="thumb-item"><img src="images/thumb4.png" alt="Miniature Il triche au BAC"></div>
-            <div class="thumb-item"><img src="images/thumb5.png" alt="Miniature Quel magnifique but"></div>
-            <div class="thumb-item"><img src="images/thumb6.png" alt="Miniature Best of Août"></div>
-          </div>
-          <div class="creator-tag">
-            <div class="creator-logo"><img src="images/logo-sirkingdom.jpg" alt="SirKingdom"></div>
-            <div>
-              <div class="creator-name">SirKingdom</div>
-              <div class="creator-sub"><a href="https://www.youtube.com/@SirKingdom" target="_blank" rel="noopener">Chaîne YouTube</a></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bloc créateur 3 -->
-        <div class="creator-block">
-          <div class="thumb-row">
-            <div class="thumb-item"><img src="images/thumb7.png" alt="Miniature 0,10€ vs 1€"></div>
-            <div class="thumb-item"><img src="images/thumb8.png" alt="Miniature Action jouets"></div>
-            <div class="thumb-item"><img src="images/thumb9.png" alt="Miniature manette 19,99€ vs 80€"></div>
-          </div>
-          <div class="creator-tag">
-            <div class="creator-logo"><img src="images/logo-lio.jpg" alt="Lio"></div>
-            <div>
-              <div class="creator-name">Lio</div>
-              <div class="creator-sub"><a href="https://www.youtube.com/@Monsieur_lio" target="_blank" rel="noopener">Chaîne YouTube</a></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bloc créateur 4 -->
-        <div class="creator-block">
-          <div class="thumb-row">
-            <div class="thumb-item"><img src="images/thumb10.png" alt="Miniature les pires vidéos d'internet"></div>
-            <div class="thumb-item"><img src="images/thumb11.png" alt="Miniature Tier-List Youtubeurs"></div>
-            <div class="thumb-item"><img src="images/thumb26.png" alt="Miniature Je mange"></div>
-          </div>
-          <div class="creator-tag">
-            <div class="creator-logo"><img src="images/logo-wouarix.jpg" alt="Wouarix"></div>
-            <div>
-              <div class="creator-name">Wouarix</div>
-              <div class="creator-sub"><a href="https://www.youtube.com/@Wouarixoff" target="_blank" rel="noopener">Chaîne YouTube</a></div>
-            </div>
-          </div>
-        </div>
-
-        <div style="max-width:500px;margin:56px auto 0;height:1px;background:rgba(255,255,255,0.6);"></div>
-
-        <!-- Autres miniatures : pas de créateur associé affiché -->
-        <div class="thumb-row" style="margin-top:56px;">
-          <div class="thumb-item"><img src="images/thumb13.png" alt="Miniature transformation physique"></div>
-          <div class="thumb-item"><img src="images/thumb14.png" alt="Miniature dégustation"></div>
-          <div class="thumb-item"><img src="images/thumb15.png" alt="Miniature voiture de racaille"></div>
-          <div class="thumb-item"><img src="images/thumb16.png" alt="Miniature Star Wars 24h"></div>
-          <div class="thumb-item"><img src="images/thumb17.png" alt="Miniature Palworld"></div>
-          <div class="thumb-item"><img src="images/thumb18.png" alt="Miniature c'est l'avion qui décide"></div>
-          <div class="thumb-item"><img src="images/thumb19.png" alt="Miniature Skaym"></div>
-          <div class="thumb-item"><img src="images/thumb20.png" alt="Miniature vlog Portugal"></div>
-          <div class="thumb-item"><img src="images/thumb21.png" alt="Miniature Chat GPT"></div>
-          <div class="thumb-item"><img src="images/thumb22.png" alt="Miniature Loan"></div>
-          <div class="thumb-item"><img src="images/thumb23.png" alt="Miniature Danone"></div>
-          <div class="thumb-item"><img src="images/thumb24.png" alt="Miniature Xavier Niel"></div>
-          <div class="thumb-item"><img src="images/thumb25.png" alt="Miniature cercle de feu"></div>
-          <div class="thumb-item"><img src="images/thumb12.png" alt="Miniature pires expériences TikTok"></div>
-          <div class="thumb-item"><img src="images/thumb27.png" alt="Miniature Temu arnaque"></div>
-          <div class="thumb-item"><img src="images/thumb28.png" alt="Miniature t'es où sa mère l'a oubliée"></div>
-          <div class="thumb-item"><img src="images/thumb29.png" alt="Miniature Poppy Playtime"></div>
-          <div class="thumb-item"><img src="images/thumb30.png" alt="Miniature villa riche"></div>
-          <div class="thumb-item"><img src="images/thumb31.png" alt="Miniature unboxing Instinct Inoxtag"></div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- BANNIERES -->
-    <section class="section" id="bannieres">
-      <div class="wrap">
-
-        <div class="section-head">
-          <h2>Bannière YouTube</h2>
-        </div>
-
-        <div class="banner-item"><img src="images/banniere-lapatte.png" alt="Bannière YouTube — Lapatte"></div>
-        <div class="banner-item"><img src="images/banniere-wouarix.png" alt="Bannière YouTube — Wouarix"></div>
-        <div class="banner-item"><img src="images/banniere-reyno.jpg" alt="Bannière YouTube — Reyno"></div>
-
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq" id="faq">
-      <div class="wrap">
-        <div class="faq-box">
-          <div class="section-head">
-            <span class="eyebrow">FAQ</span>
-            <h2>T'as des questions ?</h2>
-          </div>
-          <div class="faq-list">
-            <details class="faq-item">
-              <summary>C'est quoi une miniature et pourquoi c'est si important ?</summary>
-              <div class="faq-answer">Une miniature c'est le packaging de ta vidéo. Sans une bonne miniature, personne ne cliquera dessus, peu importe la qualité de ton contenu. Il faut connaître les codes actuels de YouTube, savoir ce qui fait cliquer, et avec la bonne miniature, ta vidéo peut vraiment décoller.</div>
-            </details>
-            <details class="faq-item">
-              <summary>Tu travailles uniquement sur YouTube ?</summary>
-              <div class="faq-answer">Oui, je me consacre entièrement aux miniatures YouTube. Cette plateforme a ses propres codes, ses tendances et ce qui fait cliquer change vite — en restant focus dessus, je peux te livrer des miniatures vraiment calibrées pour ce qui performe aujourd'hui.</div>
-            </details>
-            <details class="faq-item">
-              <summary>Tu as besoin d'accès à ma chaîne YouTube ?</summary>
-              <div class="faq-answer">Oui, jeter un œil à ta chaîne fait partie du processus. Ça m'aide à cerner ta direction artistique, à voir où tu veux emmener ta chaîne, et à te proposer une miniature qui colle vraiment à ton univers et à ton audience.</div>
-            </details>
+        <div class="creator-tag">
+          <div class="creator-logo"><img src="images/logo-djino.jpg" alt="DJINO DBG"></div>
+          <div>
+            <div class="creator-name">DJINO DBG</div>
+            <div class="creator-sub"><a href="https://www.youtube.com/@djinodbg" target="_blank" rel="noopener">Chaîne YouTube</a></div>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- RESEAUX -->
-    <section class="reseaux" id="reseaux">
-      <div class="wrap">
-        <div class="reseaux-box">
-          <h2>On travaille ensemble ?</h2>
-          <p>Retrouve-moi sur mes réseaux, ou écris-moi directement.</p>
-          <div class="reseaux-links">
-            <a href="https://www.instagram.com/inezix_grh/" target="_blank" rel="noopener" class="reseaux-link">
-              <span class="reseaux-icon">IG</span>
-              <span>Instagram</span>
-            </a>
-            <a href="#" class="reseaux-link" title="Pseudo Discord : inezix">
-              <span class="reseaux-icon">DC</span>
-              <span>#inezix</span>
-            </a>
-            <a href="https://x.com/Inezix_" target="_blank" rel="noopener" class="reseaux-link">
-              <span class="reseaux-icon">X</span>
-              <span>Twitter</span>
-            </a>
-            <a href="mailto:inezix.2.0@gmail.com" class="reseaux-link">
-              <span class="reseaux-icon">@</span>
-              <span>Mail</span>
-            </a>
+      <!-- Bloc créateur 2 -->
+      <div class="creator-block">
+        <div class="thumb-row">
+          <div class="thumb-item"><img src="images/thumb4.png" alt="Miniature Il triche au BAC"></div>
+          <div class="thumb-item"><img src="images/thumb5.png" alt="Miniature Quel magnifique but"></div>
+          <div class="thumb-item"><img src="images/thumb6.png" alt="Miniature Best of Août"></div>
+        </div>
+        <div class="creator-tag">
+          <div class="creator-logo"><img src="images/logo-sirkingdom.jpg" alt="SirKingdom"></div>
+          <div>
+            <div class="creator-name">SirKingdom</div>
+            <div class="creator-sub"><a href="https://www.youtube.com/@SirKingdom" target="_blank" rel="noopener">Chaîne YouTube</a></div>
           </div>
         </div>
       </div>
-    </section>
 
-  </main>
+      <!-- Bloc créateur 3 -->
+      <div class="creator-block">
+        <div class="thumb-row">
+          <div class="thumb-item"><img src="images/thumb7.png" alt="Miniature 0,10€ vs 1€"></div>
+          <div class="thumb-item"><img src="images/thumb8.png" alt="Miniature Action jouets"></div>
+          <div class="thumb-item"><img src="images/thumb9.png" alt="Miniature manette 19,99€ vs 80€"></div>
+        </div>
+        <div class="creator-tag">
+          <div class="creator-logo"><img src="images/logo-lio.jpg" alt="Lio"></div>
+          <div>
+            <div class="creator-name">Lio</div>
+            <div class="creator-sub"><a href="https://www.youtube.com/@Monsieur_lio" target="_blank" rel="noopener">Chaîne YouTube</a></div>
+          </div>
+        </div>
+      </div>
 
-  <footer>
-    <div class="wrap footer-row">
-      <span>© 2026 — Portfolio miniatures YouTube</span>
-      <span>By Inezix.</span>
+      <!-- Bloc créateur 4 -->
+      <div class="creator-block">
+        <div class="thumb-row">
+          <div class="thumb-item"><img src="images/thumb10.png" alt="Miniature les pires vidéos d'internet"></div>
+          <div class="thumb-item"><img src="images/thumb11.png" alt="Miniature Tier-List Youtubeurs"></div>
+          <div class="thumb-item"><img src="images/thumb26.png" alt="Miniature Je mange"></div>
+        </div>
+        <div class="creator-tag">
+          <div class="creator-logo"><img src="images/logo-wouarix.jpg" alt="Wouarix"></div>
+          <div>
+            <div class="creator-name">Wouarix</div>
+            <div class="creator-sub"><a href="https://www.youtube.com/@Wouarixoff" target="_blank" rel="noopener">Chaîne YouTube</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="max-width:500px;margin:56px auto 0;height:1px;background:rgba(255,255,255,0.6);"></div>
+
+      <!-- Autres miniatures : pas de créateur associé affiché -->
+      <div class="thumb-row" style="margin-top:56px;">
+        <div class="thumb-item"><img src="images/thumb13.png" alt="Miniature transformation physique"></div>
+        <div class="thumb-item"><img src="images/thumb14.png" alt="Miniature dégustation"></div>
+        <div class="thumb-item"><img src="images/thumb15.png" alt="Miniature voiture de racaille"></div>
+        <div class="thumb-item"><img src="images/thumb16.png" alt="Miniature Star Wars 24h"></div>
+        <div class="thumb-item"><img src="images/thumb17.png" alt="Miniature Palworld"></div>
+        <div class="thumb-item"><img src="images/thumb18.png" alt="Miniature c'est l'avion qui décide"></div>
+        <div class="thumb-item"><img src="images/thumb19.png" alt="Miniature Skaym"></div>
+        <div class="thumb-item"><img src="images/thumb20.png" alt="Miniature vlog Portugal"></div>
+        <div class="thumb-item"><img src="images/thumb21.png" alt="Miniature Chat GPT"></div>
+        <div class="thumb-item"><img src="images/thumb22.png" alt="Miniature Loan"></div>
+        <div class="thumb-item"><img src="images/thumb23.png" alt="Miniature Danone"></div>
+        <div class="thumb-item"><img src="images/thumb24.png" alt="Miniature Xavier Niel"></div>
+        <div class="thumb-item"><img src="images/thumb25.png" alt="Miniature cercle de feu"></div>
+        <div class="thumb-item"><img src="images/thumb12.png" alt="Miniature pires expériences TikTok"></div>
+        <div class="thumb-item"><img src="images/thumb27.png" alt="Miniature Temu arnaque"></div>
+        <div class="thumb-item"><img src="images/thumb28.png" alt="Miniature t'es où sa mère l'a oubliée"></div>
+        <div class="thumb-item"><img src="images/thumb29.png" alt="Miniature Poppy Playtime"></div>
+        <div class="thumb-item"><img src="images/thumb30.png" alt="Miniature villa riche"></div>
+        <div class="thumb-item"><img src="images/thumb31.png" alt="Miniature unboxing Instinct Inoxtag"></div>
+      </div>
+
     </div>
-  </footer>
+  </section>
 
-  </body>
-  </html>
+  <!-- BANNIERES -->
+  <section class="section" id="bannieres">
+    <div class="wrap">
+
+      <div class="section-head">
+        <h2>Bannière YouTube</h2>
+      </div>
+
+      <div class="banner-item"><img src="images/banniere-lapatte.png" alt="Bannière YouTube — Lapatte"></div>
+      <div class="banner-item"><img src="images/banniere-wouarix.png" alt="Bannière YouTube — Wouarix"></div>
+      <div class="banner-item"><img src="images/banniere-reyno.jpg" alt="Bannière YouTube — Reyno"></div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="faq-box">
+        <div class="section-head">
+          <span class="eyebrow">FAQ</span>
+          <h2>T'as des questions ?</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>C'est quoi une miniature et pourquoi c'est si important ?</summary>
+            <div class="faq-answer">Une miniature c'est le packaging de ta vidéo. Sans une bonne miniature, personne ne cliquera dessus, peu importe la qualité de ton contenu. Il faut connaître les codes actuels de YouTube, savoir ce qui fait cliquer, et avec la bonne miniature, ta vidéo peut vraiment décoller.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Tu travailles uniquement sur YouTube ?</summary>
+            <div class="faq-answer">Oui, je me consacre entièrement aux miniatures YouTube. Cette plateforme a ses propres codes, ses tendances et ce qui fait cliquer change vite — en restant focus dessus, je peux te livrer des miniatures vraiment calibrées pour ce qui performe aujourd'hui.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Tu as besoin d'accès à ma chaîne YouTube ?</summary>
+            <div class="faq-answer">Oui, jeter un œil à ta chaîne fait partie du processus. Ça m'aide à cerner ta direction artistique, à voir où tu veux emmener ta chaîne, et à te proposer une miniature qui colle vraiment à ton univers et à ton audience.</div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEAUX -->
+  <section class="reseaux" id="reseaux">
+    <div class="wrap">
+      <div class="reseaux-box">
+        <h2>On travaille ensemble ?</h2>
+        <p>Retrouve-moi sur mes réseaux, ou écris-moi directement.</p>
+        <div class="reseaux-links">
+          <a href="https://www.instagram.com/inezix_grh/" target="_blank" rel="noopener" class="reseaux-link">
+            <span class="reseaux-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#fff" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="#fff" stroke="none"/></svg></span>
+            <span>Instagram</span>
+          </a>
+          <a href="#" class="reseaux-link" title="Pseudo Discord : inezix">
+            <span class="reseaux-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M20 5.5c-1.5-.7-3-1.2-4.7-1.5-.2.4-.4.9-.6 1.3-1.7-.3-3.5-.3-5.3 0-.2-.4-.4-.9-.6-1.3-1.6.3-3.2.8-4.7 1.5C1.3 9.8.6 14 1 18.1c1.9 1.4 3.7 2.2 5.5 2.8.4-.6.8-1.2 1.1-1.9-.6-.2-1.2-.5-1.7-.9.1-.1.3-.2.4-.3 3.4 1.6 7.1 1.6 10.4 0 .1.1.3.2.4.3-.6.3-1.1.6-1.7.9.3.7.7 1.3 1.1 1.9 1.9-.6 3.7-1.4 5.5-2.8.5-4.8-.7-9-3-12.6ZM8.7 15.4c-1 0-1.9-1-1.9-2.1s.8-2.1 1.9-2.1 1.9 1 1.9 2.1-.8 2.1-1.9 2.1Zm6.6 0c-1 0-1.9-1-1.9-2.1s.8-2.1 1.9-2.1 1.9 1 1.9 2.1-.9 2.1-1.9 2.1Z"/></svg></span>
+            <span>#inezix</span>
+          </a>
+          <a href="https://x.com/Inezix_" target="_blank" rel="noopener" class="reseaux-link">
+            <span class="reseaux-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="#fff"><path d="M18.9 3H22l-7.6 8.7L23.3 21h-6.9l-5.4-6.6L4.7 21H1.6l8.1-9.3L1 3h7.1l4.9 6.1L18.9 3Zm-1.2 16h1.7L7.4 5H5.6l12.1 14Z"/></svg></span>
+            <span>Twitter</span>
+          </a>
+          <a href="mailto:inezix.2.0@gmail.com" class="reseaux-link">
+            <span class="reseaux-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#fff" stroke-width="2"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6.5l9 6.5 9-6.5"/></svg></span>
+            <span>Mail</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>© 2026 — Portfolio miniatures YouTube</span>
+    <span>By Inezix</span>
+  </div>
+</footer>
+
+</body>
+</html>
