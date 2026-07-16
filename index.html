@@ -103,6 +103,10 @@
   /* ---------- SECTION HEAD ---------- */
   .section{padding:0 0 90px;}
   .section-head{text-align:center;margin-bottom:44px;}
+  .section-head .eyebrow{
+    display:block;font-size:12.5px;font-weight:700;letter-spacing:1.5px;
+    color:var(--violet);text-transform:uppercase;margin-bottom:10px;
+  }
   .section-head h2{font-size:clamp(24px,3.2vw,34px);font-weight:800;margin-bottom:8px;}
   .section-head p{color:var(--muted);font-size:15px;font-weight:500;}
 
@@ -236,6 +240,35 @@
   }
   .reseaux-link:hover .reseaux-icon{transform:translateY(-4px) scale(1.05);}
   .reseaux-link span:last-child{font-size:12.5px;font-weight:600;color:var(--muted);}
+
+  /* ---------- FAQ ---------- */
+  .faq{padding:0 0 100px;}
+  .faq-box{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:24px;
+    padding:56px 40px;
+    backdrop-filter:blur(6px);
+    box-shadow:0 20px 50px -20px rgba(60,50,120,0.3);
+  }
+  .faq-list{max-width:720px;margin:0 auto;}
+  .faq-item{border-bottom:1px solid rgba(91,73,255,0.15);}
+  .faq-item:last-child{border-bottom:none;}
+  .faq-item summary{
+    list-style:none;cursor:pointer;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:20px 4px;font-weight:700;font-size:16px;color:var(--ink);
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{
+    content:"+";
+    font-size:22px;font-weight:600;color:var(--violet);
+    flex-shrink:0;transition:transform .2s ease;
+  }
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-answer{
+    padding:0 4px 22px;color:var(--muted);font-size:14.5px;font-weight:500;line-height:1.6;
+  }
 
   footer{padding:26px 0;}
   .footer-row{
@@ -446,6 +479,32 @@
             <span class="reseaux-icon">@</span>
             <span>Mail</span>
           </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="faq-box">
+        <div class="section-head">
+          <span class="eyebrow">FAQ</span>
+          <h2>T'as des questions ?</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>C'est quoi une miniature et pourquoi c'est si important ?</summary>
+            <div class="faq-answer">Une miniature c'est le packaging de ta vidéo. Sans une bonne miniature, personne ne cliquera dessus, peu importe la qualité de ton contenu. Il faut connaître les codes actuels de YouTube, savoir ce qui fait cliquer, et avec la bonne miniature, ta vidéo peut vraiment décoller.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Tu travailles uniquement sur YouTube ?</summary>
+            <div class="faq-answer">Oui, je me consacre entièrement aux miniatures YouTube. Cette plateforme a ses propres codes, ses tendances et ce qui fait cliquer change vite — en restant focus dessus, je peux te livrer des miniatures vraiment calibrées pour ce qui performe aujourd'hui.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Tu as besoin d'accès à ma chaîne YouTube ?</summary>
+            <div class="faq-answer">Oui, jeter un œil à ta chaîne fait partie du processus. Ça m'aide à cerner ta direction artistique, à voir où tu veux emmener ta chaîne, et à te proposer une miniature qui colle vraiment à ton univers et à ton audience.</div>
+          </details>
         </div>
       </div>
     </div>
