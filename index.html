@@ -60,7 +60,7 @@
     max-width:760px;
     margin:0 auto 18px;
   }
-  .hero h1 .grad{
+  .hero h1 .grad, .hero p .grad{
     background:linear-gradient(120deg, var(--blue), var(--violet) 55%, var(--cyan));
     -webkit-background-clip:text;
     background-clip:text;
@@ -68,6 +68,9 @@
   }
   .hero p{
     color:var(--muted);font-size:17px;max-width:520px;margin:0 auto;font-weight:500;
+  }
+  .hero-contact{
+    display:inline-block;margin-top:32px;
   }
 
   /* ---------- SECTION HEAD ---------- */
@@ -220,7 +223,6 @@
   <div class="wrap">
     <nav>
       <a href="#top" class="logo">Inezix</a>
-      <a href="#reseaux" class="btn-contact">Me contacter</a>
     </nav>
   </div>
 </header>
@@ -230,7 +232,8 @@
   <section class="hero">
     <div class="wrap">
       <h1>Des miniatures qui <span class="grad">font vraiment cliquer.</span></h1>
-      <p>Je crée des miniatures YouTube pour des créateurs de contenu — un aperçu de mon travail juste en dessous.</p>
+      <p>Votre contenu <span class="grad">mérite d'être vu.</span><br>Commencez <span class="grad">par la miniature.</span></p>
+      <a href="#reseaux" class="btn-contact hero-contact">Me contacter</a>
     </div>
   </section>
 
