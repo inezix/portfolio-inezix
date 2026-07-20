@@ -295,6 +295,42 @@
     display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
     font-size:12.5px;color:var(--muted);font-weight:500;
   }
+  /* ---------- LIGHTBOX ---------- */
+  .thumb-item, .banner-item, .affiche-item{cursor:zoom-in;}
+  .lightbox{
+    position:fixed;inset:0;z-index:1000;
+    background:rgba(15,12,30,0.88);
+    display:none;
+    align-items:center;justify-content:center;
+    padding:24px;
+    cursor:zoom-out;
+    backdrop-filter:blur(4px);
+  }
+  .lightbox.active{display:flex;}
+  .lightbox img{
+    max-width:92vw;
+    max-height:88vh;
+    width:auto;height:auto;
+    border-radius:12px;
+    box-shadow:0 30px 70px -20px rgba(0,0,0,0.6);
+    cursor:default;
+    animation:lightboxIn .18s ease;
+  }
+  @keyframes lightboxIn{
+    from{opacity:0;transform:scale(0.96);}
+    to{opacity:1;transform:scale(1);}
+  }
+  .lightbox-close{
+    position:absolute;top:18px;right:22px;
+    width:42px;height:42px;border-radius:50%;
+    background:rgba(255,255,255,0.12);
+    border:1.5px solid rgba(255,255,255,0.3);
+    color:#fff;font-size:22px;line-height:1;
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;
+    transition:background .15s;
+  }
+  .lightbox-close:hover{background:rgba(255,255,255,0.22);}
 </style>
 </head>
 <body>
@@ -530,6 +566,44 @@
     <span>By Inezix</span>
   </div>
 </footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-close" id="lightboxClose">&times;</div>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script>
+  (function(){
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightboxImg');
+    var closeBtn = document.getElementById('lightboxClose');
+
+    var zoomables = document.querySelectorAll('.thumb-item img, .banner-item img, .affiche-item img');
+    zoomables.forEach(function(img){
+      img.addEventListener('click', function(e){
+        e.stopPropagation();
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || '';
+        lightbox.classList.add('active');
+      });
+    });
+
+    function closeLightbox(){
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+    }
+
+    lightbox.addEventListener('click', closeLightbox);
+    closeBtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      closeLightbox();
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') closeLightbox();
+    });
+  })();
+</script>
 
 </body>
 </html>
